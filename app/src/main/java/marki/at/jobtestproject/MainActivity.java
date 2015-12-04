@@ -9,8 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import timber.log.Timber;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,9 +22,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Timber.e("Hello?=???");
-                Snackbar.make(view, "Test Job started", Snackbar.LENGTH_LONG);
-                ((TestJobApplication)getApplication()).getJobManager().addJobInBackground(new TestJob());
+                Snackbar.make(view, "Test Job started", Snackbar.LENGTH_LONG).show();
+                ((TestJobApplication) getApplication()).getJobManager().addJobInBackground(new TestJob());
             }
         });
     }
